@@ -1,7 +1,9 @@
 services:
+  # 1. Backend REST API
   - type: web
     name: storefly-api
     env: node
+    plan: free
     rootDir: storefly-api
     buildCommand: npm install && npm run build
     startCommand: npm run start
@@ -11,3 +13,18 @@ services:
         value: production
       - key: PORT
         value: 5000
+
+  # 2. Frontend Next.js Web App
+  - type: web
+    name: storefly-web
+    env: node
+    plan: free
+    rootDir: storefly-web
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        value: https://storefly-api.onrender.com
