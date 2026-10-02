@@ -27,4 +27,4 @@ services:
       - key: NODE_ENV
         value: production
       - key: NEXT_PUBLIC_API_URL
-        value: https://storefly-api.onrender.com
+        value: https://asif-6-jqxf.onrender.com
