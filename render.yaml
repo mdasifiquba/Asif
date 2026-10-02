@@ -5,7 +5,7 @@ services:
     env: node
     plan: free
     rootDir: storefly-api
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start
     autoDeploy: true
     envVars:
@@ -20,7 +20,7 @@ services:
     env: node
     plan: free
     rootDir: storefly-web
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start
     autoDeploy: true
     envVars:
